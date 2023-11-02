@@ -1,0 +1,3 @@
+dec = {'a':1, 'b':2}
+x= sum(dec['a'],dec['b'])
+print(x);
