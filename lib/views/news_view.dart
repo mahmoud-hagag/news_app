@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/widgets/caegory_list_view.dart';
-import 'package:news_app/widgets/news_list_view.dart';
+import 'package:news_app/widgets/newsListViewBuild.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -16,13 +16,13 @@ class HomeView extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               Text(
-                'News',
+                'Top',
                 style: TextStyle(
                   color: Colors.black,
                 ),
               ),
               Text(
-                'Cloud',
+                'News',
                 style: TextStyle(
                   color: Colors.orange,
                 ),
@@ -32,15 +32,13 @@ class HomeView extends StatelessWidget {
         ),
         body: const Padding(
           padding: EdgeInsets.symmetric(horizontal: 16),
-          child: CustomScrollView(
-            physics: BouncingScrollPhysics(),
-            slivers: [
+          child: CustomScrollView(physics: BouncingScrollPhysics(), slivers: [
             SliverToBoxAdapter(child: CategoryListView()),
             SliverToBoxAdapter(
                 child: SizedBox(
-              height: 24,
+              height: 32,
             )),
-            NewsListView()
+             NewsListViewBuild(category: 'general',),
           ]),
         ));
   }

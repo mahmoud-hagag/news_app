@@ -8,20 +8,21 @@ class CategoryListView extends StatelessWidget {
   });
 
   final List<CategoryModel> categories = const [
+    CategoryModel(name: "Health", imagePath: "assets/images/Health.jpg"),
+    CategoryModel(name: "Business", imagePath: "assets/images/Business.jpg"),
+    CategoryModel(name: "Sports", imagePath: "assets/images/Sports.jpg"),
+    CategoryModel(name: "Science", imagePath: "assets/images/Science.jpeg"),
     CategoryModel(
-        name: "Entertainment", imagePath: "assets/images/entertainment.jpg"),
-    CategoryModel(name: "Health", imagePath: "assets/images/health.jpg"),
-    CategoryModel(name: "Business", imagePath: "assets/images/business.jpg"),
-    CategoryModel(name: "Sports", imagePath: "assets/images/sports.jpg"),
-    CategoryModel(name: "Science", imagePath: "assets/images/science.jpeg"),
-    CategoryModel(name: 'Technology', imagePath: 'assets/images/technology.jpeg'),
+        name: 'Technology', imagePath: 'assets/images/Technology.jpeg'),
+    CategoryModel(
+        name: "Entertainment", imagePath: "assets/images/Entertainment.jpg"),
   ];
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: 120,
       child: ListView.builder(
-      physics: const BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         scrollDirection: Axis.horizontal,
         itemCount: categories.length,
         itemBuilder: (context, index) {

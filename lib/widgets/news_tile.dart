@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:news_app/models/article_model.dart';
 
 class NewsTile extends StatelessWidget {
-  const NewsTile({super.key,required this.articleModel});
+  const NewsTile({super.key, required this.articleModel});
   final ArticleModel articleModel;
   @override
   Widget build(BuildContext context) {
@@ -11,7 +11,8 @@ class NewsTile extends StatelessWidget {
         borderRadius: BorderRadius.circular(6),
         child: Image.network(
           articleModel.image ??
-          'https://www.searchenginejournal.com/wp-content/uploads/2022/06/image-search-1600-x-840-px-62c6dc4ff1eee-sej-1520x800.webp',
+              'https://upload.wikimedia.org/wikipedia/commons/d/d1/Image_not_available.png',
+          scale: 1.0,
           fit: BoxFit.cover,
           height: 200,
           width: double.infinity,
@@ -31,11 +32,34 @@ class NewsTile extends StatelessWidget {
         height: 8,
       ),
       Text(
-        articleModel.subTitle??'',
+        articleModel.subTitle ?? "no des",
         maxLines: 2,
         overflow: TextOverflow.ellipsis,
         style: const TextStyle(
             color: Colors.grey, fontSize: 13, fontWeight: FontWeight.w500),
+      ),
+      Row(
+        children: [
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.favorite_border),
+          ),
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.messenger_outline_outlined),
+          ),
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.share_rounded),
+          ),
+          const Spacer(
+            flex: 1,
+          ),
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.bookmark_outline_rounded),
+          ),
+        ],
       ),
     ]);
   }
