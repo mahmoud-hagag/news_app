@@ -24,10 +24,3 @@ class Webiew extends StatelessWidget{
     );
   }
 }
-class Controller{
-  final controller = WebViewController()
-    ..setJavaScriptMode(JavaScriptMode.disabled)
-    ..loadRequest(Uri.parse(url)) ;
-    
-      static String url='';
-}
